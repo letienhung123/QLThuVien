@@ -5,14 +5,12 @@
 package com.lth.bojo;
 
 import java.sql.Date;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
  * @author lth7p
  */
 public class Sach {
-    private static final AtomicInteger count = new AtomicInteger(0);
     private int maSach;
     private String tenSach;
     private String tenTacGia;
@@ -24,7 +22,8 @@ public class Sach {
     }
 
     public Sach(int maSach, String tenSach, String tenTacGia, Date NamXB, int tinhTrang, int soTrang) {
-        this.maSach = count.incrementAndGet();
+//        this.maSach = count.incrementAndGet();
+        this.maSach = maSach;
         this.tenSach = tenSach;
         this.tenTacGia = tenTacGia;
         this.NamXB = NamXB;
