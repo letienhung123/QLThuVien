@@ -42,7 +42,8 @@ public class FXMLDangNhapController implements Initializable {
 
     public void themNhanVienBt(ActionEvent event) {
         NhanVien nv = new NhanVien(0, this.txtHoVaTen.getText(), this.txtTenDangNhapdk.getText(), this.txtMatKhaudk1.getText());
-        if (RegexCheck.checkLogin(this.txtTenDangNhapdk.getText(), this.txtMatKhaudk1.getText()) == true) {
+        
+        if (RegexCheck.checkLogin(this.txtTenDangNhapdk.getText(), this.txtMatKhaudk1.getText())==1) {
             if (this.txtMatKhaudk1.getText().equals(this.txtMatKhaudk2.getText()) == true) {
                 NhanVienService s = new NhanVienService();
                 try {
@@ -55,6 +56,8 @@ public class FXMLDangNhapController implements Initializable {
                 Utils.getBox("Mật khẩu không trùng khớp", Alert.AlertType.INFORMATION).show();
             }
         }
+        else
+            Utils.getBox("Tài khoản hoặc mật khẩu không hợp lệ!!", Alert.AlertType.WARNING).show();
     }
     public void dangNhapBt(ActionEvent event){
         NhanVienService s = new NhanVienService();
